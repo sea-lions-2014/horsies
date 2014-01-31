@@ -15,9 +15,23 @@ This will be our most complicated web application yet.  The goal is to get a fee
 
 This challenge will also have dimensions of product management and everyday engineering.  Often specifications you receive are incomplete, ambiguous, or even contradictory.
 
+
+
 ##Releases
 
-###Release 0 : Application Details
+###Release 0 : MVP 
+
+Resolve your team workflow.
+  * Use [trello](https://trello.com) to write your user stories
+  * Create a new repository on sea-lions-2014:GitHub
+  * Create a README with the following:
+    * Team Name and Members
+    * Team workflow - pairs, managers, etc.
+    * Describe your MVP.
+  * Decide if you are starting from the [Sinatra Skeleton](https://github.com/sea-lions-2014/sinatra_skeleton_mvc) or writing everything from scratch. If using the skeleton copy the files into your repo.
+  * Get checked off by staff.
+
+###Release 1 : Application Details
 
 You'll pre-determine the set of decks.  Later we'll add the ability for users to add their own, but for now you can add them via `seeds.rb` if you want.  Add more than one.  Ideas:
 
@@ -32,7 +46,7 @@ Users can play a "round," which is a series of guesses over all the cards in a d
 
 To make it easier, we'll say that a user can only use the flash cards if they're logged in.
 
-###Release 1 : Routes &amp; Models
+###Release 2 : Routes &amp; Models
 
 Determine your routes, and use multiple controller files.  When I'm logged in, I'll want to be able to do things like:
 
@@ -47,14 +61,17 @@ Think about how you're going to model a `Round` in particular.  You make a guess
 
 There are other ways to conduct a round, but this is how we'll do it for now.  Feel free to do something more interesting if the spirit moves you.
 
-###Release 2 : Simple UI
+###Release 3 : Simple UI
 
 Create a simple UI that lets you submit guesses and, if correct, advances to the next card in the round.  You should log both incorrect and correct guesses.
 
 When a user is done they should be redirected to a page that shows a list of all the rounds they've completed in chronological order from most recent to least recent.  On this page you should also include stats about the round, like total number of guesses, total number of cards in the round, % correct, etc.
 
-###Release 3 : Testing
+###Release 4 : Testing
 If you haven't been writing tests as you go, or even better using TDD, then now is the time to add them.  You should have ample test coverage of your model and controller.  If you want you can explore testing of your views as well.
+
+###Release 5 : Add a feature (optional)
+There are lots of features you can add to make this app amazing.  Find a few that interest you. 
 
 ##Optimize Your Learning 
 This project is as much about project management and team dynamics as it is about the code.  What skills / lessons did you learn from working with a team?  How will you work better next time?
