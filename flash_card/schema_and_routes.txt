@@ -16,5 +16,3 @@ Quizpage => Right or Wrong
 Right and Wrong => Scores page or Quizpage
 
 Scores Page => Homepage
-
-
