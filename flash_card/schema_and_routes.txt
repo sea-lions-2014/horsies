@@ -1,0 +1,20 @@
+Schema and Routes:
+
+Cards have id, question, answer
+cardeck has card_id, deck_id
+decks have id, name
+Users have id, name
+
+___________________________________________________________
+
+Homepage => Deck
+
+Deck => Cards or Quizpage
+
+Quizpage => Right or Wrong
+
+Right and Wrong => Scores page or Quizpage
+
+Scores Page => Homepage
+
+
