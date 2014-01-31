@@ -4,7 +4,10 @@ get '/' do
 end
 
 get '/deck/:id/quiz' do
+@deck = Deck.find(params[:id])
+@top_card = @deck.cards.first
 
+erb :quiz
 end
 
 get '/deck/:id/quiz/correct' do
