@@ -15,15 +15,13 @@ This will be our most complicated web application yet.  The goal is to get a fee
 
 This challenge will also have dimensions of product management and everyday engineering.  Often specifications you receive are incomplete, ambiguous, or even contradictory.
 
-
-
 ##Releases
 
 ###Release 0 : MVP 
 
 Resolve your team workflow.
   * Use [trello](https://trello.com) to write your user stories
-  * Create a new repository on sea-lions-2014:GitHub
+  * Create a new repository on sea-lions-2014:GitHub. Use this [git workflow](workflow.md)
   * Create a README with the following:
     * Team Name and Members
     * Team workflow - pairs, managers, etc.
