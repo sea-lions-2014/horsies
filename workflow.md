@@ -9,7 +9,12 @@
 * Make sure the local master is up to date with the latest master on GitHub `git pull origin master`
 * Create a feature branch name it after the feature (not your names)  `git checkout -b featureX`
 * Work on your branch.  Make meaningful commits often.  
-* If you are working on your branch for a long time, you might want to periodically merge the master from GitHub into your local feature branch to avoid diverging too far. Run  `git pull origin master` from your branch.  Fix any merge conflicts.
+* If you are working on your branch for a long time, you might want to periodically merge the master from GitHub into your local feature branch to avoid diverging too far. Run  `git pull origin master` from your branch.  Fix any merge conflicts.  Howto:
+  * Make sure your feature branch has its latest commits saved.  Don't have un-committed changes.
+  * `git checkout master`:  switch to the master branch
+  * `git pull origin master`: pull down the latest changes from the server
+  * `git checkout featureX`: switch to your featureX branch
+  * `git rebase master`:  rebase your featureX branch on top the changes (if any) on your *local* `master`.  Since you just pulled, it should be synchronized with `origin/master` 
 * When you finish your branch, you want to rebase master into it.  First make sure your local master is up to date with 
   * `git checkout master`
   * `git pull origin master` 
