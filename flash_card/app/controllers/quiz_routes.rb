@@ -17,5 +17,5 @@ get '/deck/:id/quiz/score' do
   erb :score
 end
 
-post '/quit' do
+post '/deck/:id/quiz/quit' do
 end

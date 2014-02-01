@@ -1,5 +1,18 @@
-<% @decks.each do |deck| %>
-<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
-<% end %>
-
-<a href='/deck/new'>Create a new deck</a>
+<h2>Login</h2>
+<div id="login">
+<form action="/login" method="post">
+  Name: <input type="text" name="name"><br>
+  Password: <input type="text" name="password"><br>
+            <input type="submit" value="Login"><br>
+</form>
+</div>
+<br>
+<br>
+<h2>Create Account</h2>
+<div id="create_account">
+  <form action="/create_account" method="post">
+      Name: <input type="text" name="name"><br>
+  Password: <input type="text" name="password"><br>
+            <input type="submit" value="Create Account"><br>
+</form>
+</div>
