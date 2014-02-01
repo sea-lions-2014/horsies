@@ -1,3 +1,8 @@
+get "/deck/:deck_id/delete" do
+  Deck.find(params[:deck_id]).destroy
+  redirect "/"
+end
+
 get '/deck/new' do
   erb :create_deck
 end
@@ -8,18 +13,9 @@ get '/deck/:deck_id' do
   erb :deck_view
 end
 
-get "/deck/:deck_id/delete" do
-  Deck.find(params[:deck_id]).destroy
-  redirect "/"
-end
-
-post '/deck/create' do
+post '/deck' do
   @name = params[:deck_name]
   @type = "deck"
   @new_deck = Deck.create(name: @name)
-  redirect "/deck_got_created"
-end
-
-get '/deck_got_created' do
   erb :created_deck
 end
