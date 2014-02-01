@@ -1,0 +1,10 @@
+<h1>Welcome <%= @user.name %></h1><br>
+<% @decks.each do |deck| %>
+<a href="/<%= @user.id %>/deck/<%= deck.id %>"><%= deck.name %></a><br>
+<% end %>
+
+<a href='/<%= @user.id %>/deck/new'>Create a new deck</a>
+
+<br>
+<br>
+<a href='/logout'>Logout</a>

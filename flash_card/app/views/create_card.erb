@@ -1,7 +1,7 @@
 <div class="container">
-  <a href='/'>Home</a>
+  <a href='/<%= @user.id %>'>Home</a>
   <h1>Create a new card!</h1>
-  <form action='/deck/<%= @deck_id %>/card' method='post'>
+  <form action='/<%= @user.id %>/deck/<%= @deck_id %>/card' method='post'>
     <fieldset>
       <li>
         <label>Question</label>
