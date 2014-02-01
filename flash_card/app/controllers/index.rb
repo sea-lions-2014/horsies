@@ -1,7 +1,7 @@
 enable :sessions
 
 before '/:user_id/*' do
-  @user = User.find(params[:user_id])
+  @user = User.find(id: session[:user_id])
    if session[:logged_in] == false
     redirect '/unauthorized'
    end
@@ -12,17 +12,19 @@ get '/' do
 end
 
 post '/login' do
+  @user = User.where(params)
   if User.where(params).empty?
     erb :index
   else
-    session[:logged_in] = true
     @user = User.where(params).first
+    session[:logged_in] = true
+    session[:user_id] = @user.id
+    @user = @users.first
     redirect "/#{@user.id}/deck"
   end
 end
 
 post '/create_account' do
-  p params
   User.create(params)
   redirect '/'
 end
