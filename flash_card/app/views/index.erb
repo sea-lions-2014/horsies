@@ -1,1 +1,5 @@
-HELLLO HORSEEE NEEEEEEIGHHHHHH NAYYYYYYYYYYY
+<% @decks.each do |deck| %>
+<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
+<% end %>
+
+<a href='/deck/new'>Create a new deck</a>
