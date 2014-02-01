@@ -1,0 +1,10 @@
+<div class='container'>
+  <a href='/'>Home</a>
+    <h1>You have made a card!</h1>
+      <%= @question %><br>
+      <%= @answer %><br>
+      <%= @category %><br>
+  <a href='/deck/<%= @deck_id %>/card/new'>Create a new card</a>
+  <a href='/deck/<%= @deck_id %>'>Go back to deck</a>
+  <a href='/deck/new'>Create a new deck</a>
+</div>
