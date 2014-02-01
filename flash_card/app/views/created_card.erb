@@ -1,9 +1,9 @@
 <div class='container'>
-  <a href='/<%= @user.id %>/<%= @deck_id %>'>Back</a>
+  <a href='/<%= @deck_id %>'>Back</a>
     <h1>You have made a card!</h1>
       <%= @question %><br>
       <%= @answer %><br>
-  <a href='/<%= @user.id %>/deck/<%= @deck_id %>/card/new'>Create a new card</a>
-  <a href='/<%= @user.id %>/deck/<%= @deck_id %>'>Go back to deck</a>
-  <a href='/<%= @user.id %>/deck/new'>Create a new deck</a>
+  <a href='/deck/<%= @deck_id %>/card/new'>Create a new card</a>
+  <a href='/deck/<%= @deck_id %>'>Go back to deck</a>
+  <a href='/deck/new'>Create a new deck</a>
 </div>

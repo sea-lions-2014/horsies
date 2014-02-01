@@ -1,14 +1,14 @@
-get '/:user_id/deck/:deck_id/card/new' do
+get '/deck/:deck_id/card/new' do
   @deck_id = params[:deck_id]
   erb :create_card
 end
 
-get "/:user_id/deck/:deck_id/:card_id/delete" do
+get "/deck/:deck_id/:card_id/delete" do
   Card.find(params[:card_id]).destroy
-  redirect "/#{params[:user_id]}/deck/#{params[:deck_id]}"
+  redirect "/deck/#{params[:deck_id]}"
 end
 
-post '/:user_id/deck/:deck_id/card' do
+post '/deck/:deck_id/card' do
   @question = params[:question]
   @answer = params[:answer]
   @deck_id = params[:deck_id]

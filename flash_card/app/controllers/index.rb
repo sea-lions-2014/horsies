@@ -1,9 +1,10 @@
 enable :sessions
 
-before '/:user_id/*' do
-  @user = User.find(id: session[:user_id])
+before '/*' do
+  pass if params[:splat] == ["logout"] || params[:splat] == [""] || params[:splat] == ["login"]
+  @user = User.where(id: session[:user_id]).first
    if session[:logged_in] == false
-    redirect '/unauthorized'
+      redirect '/unauthorized'
    end
 end
 
@@ -19,8 +20,7 @@ post '/login' do
     @user = User.where(params).first
     session[:logged_in] = true
     session[:user_id] = @user.id
-    @user = @users.first
-    redirect "/#{@user.id}/deck"
+    redirect "/#{@user.name}"
   end
 end
 
@@ -38,8 +38,7 @@ get '/unauthorized' do
   erb :unauthorized
 end
 
-get '/:user_id' do
-  @user = User.find(params[:user_id])
+get '/:user_name' do
   erb :user
 end
 
