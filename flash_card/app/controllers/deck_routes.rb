@@ -5,8 +5,9 @@ end
 
 get "/deck/:deck_id/delete" do
   Deck.find(params[:deck_id]).destroy
-  redirect "/#{params[:user_id]}/deck"
+  redirect "/deck"
 end
+
 
 get '/deck/new' do
   erb :create_deck
@@ -25,3 +26,12 @@ post '/deck' do
   @user.decks << @new_deck
   erb :created_deck
 end
+
+get '/deck/:deck_id/scores' do
+  @deck_id = params[:deck_id]
+  @scores = Score.where(deck_id: @deck_id).order("value DESC")
+  @users = @scores.select(:user_id).map {|item| User.find(item.user_id)}
+  erb :score
+end
+
+

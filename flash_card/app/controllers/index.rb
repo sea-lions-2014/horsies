@@ -41,4 +41,3 @@ end
 get '/:user_name' do
   erb :user
 end
-
