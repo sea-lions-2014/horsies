@@ -3,6 +3,10 @@ get '/' do
   erb :index
 end
 
+get '/deck/new' do
+  erb :create_deck
+end
+
 get '/deck/:deck_id' do
   @deck = Deck.find(params[:deck_id])
   @cards = @deck.cards
@@ -14,8 +18,14 @@ get '/deck/:deck_id/card/new' do
   erb :create_card
 end
 
-get '/deck/new' do
-  erb :create_deck
+get "/deck/:deck_id/delete" do
+  Deck.find(params[:deck_id]).destroy
+  redirect "/"
+end
+
+get "/deck/:deck_id/:card_id/delete" do
+  Deck.find(params[:deck_id]).cards.find(params[:card_id]).destroy
+  redirect "/deck/#{params[:deck_id]}"
 end
 
 post '/deck/:deck_id/card/create' do
@@ -26,17 +36,18 @@ post '/deck/:deck_id/card/create' do
   @type = "card"
   @new_card = Card.create(question: @question, answer: @answer, category: @category)
   @new_card.decks << Deck.find(params[:deck_id])
-  redirect '/card_got_created'
+  redirect "/deck/#{params[:deck_id]}/card/created"
 end
 
 post '/deck/create' do
   @name = params[:deck_name]
   @type = "deck"
   @new_deck = Deck.create(name: @name)
-  redirect '/deck_got_created'
+  redirect "/deck_got_created"
 end
 
-get '/card_got_created' do
+get '/deck/:deck_id/card/created' do
+  @deck_id = params[:deck_id]
   erb :created_card
 end
 
