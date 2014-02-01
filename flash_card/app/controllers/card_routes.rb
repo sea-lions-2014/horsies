@@ -3,7 +3,7 @@ get '/deck/:deck_id/card/new' do
   erb :create_card
 end
 
-get "/deck/:deck_id/:card_id/delete" do
+get "/deck/:deck_id/card/:card_id/delete" do
   Card.find(params[:card_id]).destroy
   redirect "/deck/#{params[:deck_id]}"
 end
