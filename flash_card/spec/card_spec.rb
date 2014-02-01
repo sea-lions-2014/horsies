@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Card do
   describe "card creation" do
-    let(:deck) { Deck.create(name: 'Andy') }
+    let(:deck) { Deck.new(name: 'Andy') }
     let(:card) { Card.new(question: 'what is andys age', answer: '19') }
 
 
@@ -20,8 +20,8 @@ describe Card do
   end
 
   describe "card deck association" do
-    let(:deck) { Deck.create(name: 'Andy') }
-    let(:card) { Card.create(question: 'what is andys age', answer: '19') }
+    let(:deck) { Deck.new(name: 'Andy') }
+    let(:card) { Card.new(question: 'what is andys age', answer: '19') }
 
     before :each do
       card.decks << deck
