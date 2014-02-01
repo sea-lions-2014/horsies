@@ -1,5 +1,14 @@
-<% @decks.each do |deck| %>
-<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
-<% end %>
+<div class="container-andy-home">
+  <fieldset>
+    <% @decks.each do |deck| %>
+    <a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
+    <% end %>
+  </fieldset>
+</div>
 
-<a href='/deck/new'>Create a new deck</a>
+<img src='/img/andy.jpeg' alt="Andy's Face">
+
+<div class= "create-new-deck-home">
+  <a href='/deck/new'>Create a new deck</a>
+</div>
+

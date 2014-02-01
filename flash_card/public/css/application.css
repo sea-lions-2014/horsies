@@ -1,3 +1,20 @@
 body {
 	text-align: center;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-image:url('/img/light3.png');
+}
+
+.container-andy-home a{
+  text-decoration: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.create-new-deck-home a{
+  text-decoration: none;
+/*  color: #fdfdfd;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #7B1113;*/
+  padding: 10px, 400px;
+  background-color: #d3d3d3;
 }
