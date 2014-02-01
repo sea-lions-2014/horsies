@@ -1,7 +1,7 @@
 enable :sessions
 
 before '/*' do
-  pass if params[:splat] == ["logout"] || params[:splat] == [""] || params[:splat] == ["login"]
+  pass if params[:splat] == [""] || params[:splat] == ["unauthorized"]
   @user = User.where(id: session[:user_id]).first
    if session[:logged_in] == false
       redirect '/unauthorized'
