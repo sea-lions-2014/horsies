@@ -1,0 +1,7 @@
+<a href="/">Home</a>
+<div class="continer">
+<% @cards.each do |card| %>
+<%= card.question %><br>
+<% end %>
+<a href="/deck/<%= @deck.id %>/card/new">Add a new card to this deck</a>
+</div>
