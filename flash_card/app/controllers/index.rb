@@ -9,6 +9,12 @@ before '/*' do
 end
 
 get '/' do
+
+  erb:index
+end
+
+get '/decks' do
+  @decks = Deck.all
   erb :index
 end
 
@@ -31,6 +37,7 @@ post '/login' do
 end
 
 post '/create_account' do
+  p params
   User.create(params)
   redirect '/'
 end

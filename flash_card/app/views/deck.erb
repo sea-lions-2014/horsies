@@ -1,9 +1,11 @@
-<% @decks.each do |deck| %>
-<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
-<% end %>
+<div id="all-deck-links">
+	<h2>Your Decks</h2><br>
+	<% @decks.each do |deck| %>
+	<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
+	<% end %>
+	<br><a href='/<%= @user.name %>'>Back to Home</a>
+</div>
 
-<a href='/deck/new'>Create a new deck</a>
-
-<br>
-<br>
-<a href='/logout'>Logout</a>
+<div id="deck-links"> 
+	<a href='/deck/new'>Create a new deck</a><br>
+</div>
