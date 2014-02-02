@@ -17,4 +17,11 @@ body {
   background-color: #7B1113;*/
   padding: 10px, 400px;
   background-color: #d3d3d3;
+
+}
+
+.main-image {
+  height: 700px;
+  overflow: hidden;
+  /*opacity:0.4;*/
 }
