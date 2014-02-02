@@ -4,11 +4,13 @@ disable :run
 
 require 'capybara'
 require 'capybara/dsl'
+require File.expand_path('../../spec/helpers/authentication_helper',  __FILE__)
 
 Capybara.app = Sinatra::Application
 
 RSpec.configure do |config|
   config.include Capybara::DSL
+  config.include AuthenticationHelper
 end
 
 # Helpers
