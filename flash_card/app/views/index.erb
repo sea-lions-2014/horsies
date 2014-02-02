@@ -1,21 +1,18 @@
-<div class="container-andy-home">
-  <fieldset>
-    <% @decks.each do |deck| %>
-    <a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
-    <% end %>
-  </fieldset>
+<h2>Login</h2>
+<div id="login">
+<form action="/login" method="post">
+  Name: <input type="text" name="name"><br>
+  Password: <input type="text" name="password"><br>
+            <input type="submit" value="Login"><br>
+</form>
 </div>
-
-<!-- <img src='/img/andy.jpeg' alt="Andy's Face"> -->
-<div class="main-image">
-  <img src='/img/horses_bw.jpg' alt="Horses" width= 100%>
+<br>
+<br>
+<h2>Create Account</h2>
+<div id="create_account">
+  <form action="/create_account" method="post">
+      Name: <input type="text" name="name"><br>
+  Password: <input type="text" name="password"><br>
+            <input type="submit" value="Create Account"><br>
+</form>
 </div>
-
-<div class="create-new-deck-home">
-  <a href='/deck/new'>Create a new deck</a>
-</div>
-
-<div class="header">
-  <h1></h1>
-</div>
-
