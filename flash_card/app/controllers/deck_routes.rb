@@ -31,7 +31,7 @@ get '/deck/:deck_id/scores' do
   @deck_id = params[:deck_id]
   @scores = Score.where(deck_id: @deck_id).order("value DESC")
   @users = @scores.select(:user_id).map {|item| User.find(item.user_id)}
-  erb :score
+  erb :leaderboard
 end
 
 
