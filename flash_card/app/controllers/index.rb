@@ -1,7 +1,7 @@
 enable :sessions
 
 before '/*' do
-  pass if params[:splat] == [""] || params[:splat] == ["unauthorized"]
+  pass if params[:splat] == [""] || params[:splat] == ["unauthorized"] || params[:splat] == ["login"]
   @user = User.where(id: session[:user_id]).first
    if session[:logged_in] == false
       redirect '/unauthorized'
@@ -13,6 +13,7 @@ get '/' do
 end
 
 post '/login' do
+  p "got here"
   @user = User.where(params)
   if User.where(params).empty?
     erb :index
