@@ -7,4 +7,9 @@ FactoryGirl.define do
   factory :deck do
     sequence(:name)  { |n| "deck #{n}" }
   end
+
+  factory :user do
+  	sequence(:name) { |n| "user#{n}" }
+  	password "foobar"
+  end
 end
