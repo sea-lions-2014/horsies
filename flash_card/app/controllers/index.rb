@@ -10,9 +10,10 @@ end
 
 get '/' do
 
+  erb:index
 end
 
-get '/decks'
+get '/decks' do
   @decks = Deck.all
   erb :index
 end

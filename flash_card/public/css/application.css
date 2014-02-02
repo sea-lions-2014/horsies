@@ -1,27 +1,63 @@
 body {
-	text-align: center;
+  display: inline;
+	/*text-align: center;*/
   font-family: 'Montserrat Alternates', sans-serif;
   background-image:url('/img/light3.png');
 }
 
-.container-andy-home a{
+/*.container-andy-home a{
   text-decoration: none;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .create-new-deck-home a{
   text-decoration: none;
-/*  color: #fdfdfd;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #7B1113;*/
   padding: 10px, 400px;
   background-color: #d3d3d3;
 
+}*/
+
+.home_container {
+  margin:auto;
+}
+
+#login {
+  float: center;
+}
+
+#create_account, #login{
+  position: fixed;
+  top: 700px;
+  left: 0;
+  margin: 0;
+  padding: 10px;
+  width: 1000px;
+  text-align: center;
+/*  background-color: #efefef;
+  opacity: 0.3;*/
+  z-index: 10;
+}
+
+#create_account label {
+  display: inline-block;
+  font-size: 12px;
+  font-family: helvetica, sans-serif;
+  color: white;
+}
+
+#login {
+  width: 2000px;
 }
 
 .main-image {
+  margin: auto;
+  position: relative;
+  z-index: 0;
   height: 700px;
-  overflow: hidden;
+/*  overflow: hidden;*/
   /*opacity:0.4;*/
+}
+
+.home_container h1 {
+  color: white;
 }
