@@ -1,4 +1,4 @@
-require_relative 'acceptance_helper'
+require_relative '../acceptance_helper'
 
 describe 'Home Page' do  
   context 'checking for login' do
@@ -7,4 +7,7 @@ describe 'Home Page' do
       expect(page).to have_content "Login"
     end
   end
+end
+
+
 end
