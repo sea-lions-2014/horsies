@@ -13,7 +13,6 @@ get '/' do
 end
 
 post '/login' do
-  p "got here"
   @user = User.where(params)
   if User.where(params).empty?
     erb :index
