@@ -38,4 +38,19 @@ describe 'User Authorization' do
 			expect(page).to have_content("Welcome ".concat(user.name))
 		end
 	end
+
+	describe 'Failed login' do
+		let(:user) { FactoryGirl.create(:user) }
+
+		before do
+			visit '/'
+			find('#login-name').set(user.name)
+			find('#login-pass').set('fail')
+			click_button "Login"
+		end
+
+		it 'should show me failed login' do
+			expect(page).to have_content("unauthorized")
+		end
+	end
 end
