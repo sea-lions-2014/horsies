@@ -18,6 +18,12 @@ get '/decks' do
   erb :index
 end
 
+get '/score' do
+  p "triggered"
+  @decks = @user.decks
+  erb :all_scores
+end
+
 post '/login' do
   @user = User.where(params)
   if User.where(params).empty?

@@ -1,0 +1,19 @@
+<% @decks.each do |deck| %>
+  <% scores = Score.where(deck_id: deck.id).order("value DESC") %>
+  <% users = scores.select(:user_id).map {|item| User.find(item.user_id)}%>
+
+<h2><%= deck.name %></h2><br>
+<table border ="1">
+  <% users.each do |player| %>
+    <% current_record = player.id %><br>
+      <% scores.each do |score| %>
+        <% if current_record == score.user_id %>
+          <tr>
+            <td><%= player.name %></td>
+            <td><%= score.value %></td>
+          </tr>
+        <% end %>
+      <% end %>
+  <% end %>
+</table>
+<% end %>

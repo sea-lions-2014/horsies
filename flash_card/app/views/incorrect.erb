@@ -4,6 +4,6 @@ Incorrect!
     <input type="submit" value="Score">
 </form>
 
-<form action="/deck/<%=params[:id]%>/quiz" method="GET">
+<form action="/deck/<%=params[:id]%>/quiz/<%= @num %>" method="GET">
     <input type="submit" value="Next Question">
 </form>

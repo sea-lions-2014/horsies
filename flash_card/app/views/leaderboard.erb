@@ -1,0 +1,31 @@
+<a href='/'>Home</a><br>
+
+
+SCORE page<br>
+<table border ="1">
+  <% @users.each do |player| %>
+    <% current_record = player.id %><br>
+      <% @scores.each do |score| %>
+        <% if current_record == score.user_id %>
+          <tr>
+            <td><%= player.name %></td>
+            <td><%= score.value %></td>
+          </tr>
+        <% end %>
+      <% end %>
+  <% end %>
+</table>
+
+
+<!-- <table border="1">
+    <td></td>
+    <% @scores.each do |score| %>
+      <tr>
+        find where User.id == score.user_id, then print User.name
+
+        <td><%= score.user_id %></td>
+        <td><%= score.value %></td>
+      </tr>
+    <% end %>
+</table> -->
+<a href="/deck/<%= @deck_id %>">Return to Deck</a>
