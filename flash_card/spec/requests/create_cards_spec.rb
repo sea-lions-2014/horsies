@@ -53,11 +53,53 @@ describe 'Deck management' do
 			end
 		end
 
-		describe 'add cards to a deck' do
+		describe 'view a deck' do
 			before do
+				click_link @deck.name
 			end
 
-			
+			it 'should have a link to add a card' do
+				expect(page).to have_content("Add a new card")
+			end
+
+			describe 'add a card' do
+				let(:question) { "test question" }
+				let(:answer) { "test answer" }
+
+				before do
+					click_link "Add a new card to this deck"
+					fill_in "question", with: question
+					fill_in "answer", with: answer
+				end
+
+				it 'should save a card to the deck' do
+					expect { click_button "Create!" }.to change(Card,:count).by(1)
+				end
+
+				describe 'new card confirmation' do
+					before do
+						click_button "Create!"
+					end
+
+					it 'should have a confirmation message' do
+						expect(page).to have_content("You have made a card!")
+					end
+
+					it 'should have a link to go back to deck' do
+						expect(page).to have_content("Go back to deck")
+					end
+
+					describe 'return to deck page' do
+						before do
+							click_link "Go back to deck"
+						end
+
+						it 'should show the question of the card created' do
+							expect(page).to have_content(question)
+						end
+					end
+				end
+			end
 		end
 	end
 end
