@@ -1,3 +1,97 @@
 body {
-	text-align: center;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-image:url('/img/light3.png');
+  min-width: 780px;
 }
+
+.home_container {
+  margin:auto;
+}
+
+.main-image {
+  margin-top: 120px; 
+  width: 100%;
+}
+
+.home_container h1 {
+  color: white;
+}
+
+.home_box {
+  width: 100%;
+  height: 150px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#login, #create_account {
+  width: 300px;
+}
+
+#login {
+  padding-right: 30px;
+  border-right: 2px solid gray;
+}
+
+#create_account {
+  padding-left: 20px;
+}
+
+label {
+  width: 100px;
+}
+
+input {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+#welcome-links, #deck-links{
+  margin: auto;
+  width: 300px;
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border: 2px solid gray;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+#welcome, #deck-links {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.home {
+  display: flex;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.home a{
+  margin: auto;
+}
+
+a:hover{
+  color: #830300;
+}
+
+.create-deck-container {
+  margin: auto;
+  background: white;
+  width: 700px;
+  margin-top: 120px;
+  padding: 20px;
+  border: 2px solid gray;
+}
+
+
+
+
+

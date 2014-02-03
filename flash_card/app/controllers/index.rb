@@ -9,6 +9,12 @@ before '/*' do
 end
 
 get '/' do
+
+  erb:index
+end
+
+get '/decks' do
+  @decks = Deck.all
   erb :index
 end
 
@@ -21,7 +27,7 @@ end
 post '/login' do
   @user = User.where(params)
   if User.where(params).empty?
-    erb :index
+    redirect '/unauthorized'
   else
     @user = User.where(params).first
     session[:logged_in] = true
