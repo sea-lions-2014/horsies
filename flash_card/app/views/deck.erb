@@ -1,7 +1,9 @@
 <div id="all-deck-links">
+	<h2>Your Decks</h2><br>
 	<% @decks.each do |deck| %>
 	<a href="/deck/<%= deck.id %>"><%= deck.name %></a><br>
 	<% end %>
+	<br><a href='/<%= @user.name %>'>Back to Home</a>
 </div>
 
 <div id="deck-links"> 
