@@ -1,4 +1,5 @@
 get '/deck' do
+  @user = User.find(session[:user_id])
   @decks = @user.decks.all
   erb :deck
 end
