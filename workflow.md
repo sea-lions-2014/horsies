@@ -10,7 +10,7 @@
 * Create a feature branch name it after the feature (not your names)  `git checkout -b featureX`
 * Work on your branch.  Make meaningful commits often.  
 * If you are working on your branch for a long time, you might want to periodically rebase onto master from GitHub to avoid diverging too far.  **HOWTO**:
-  * Make sure your feature branch (e.g. featureX) has its latest commits saved.  Don't have un-committed changes.  For the curious, you _could_ use `git stash(1)`, but if you don't want to open that can of worms, make sure you're committed up.
+  * Make sure your feature branch (e.g. featureX) has its latest commits saved.  **Don't have un-committed changes.**  When you `rebase` or `merge` you are going to write changed files to the filesystem.  If you have uncommitted changes on disk **they will be blown away**.  A Sea Lion among you can tell you about this.  For the curious, you _could_ use `git stash(1)`, but if you don't want to open that can of worms, make sure you're committed up.
   * `git checkout master`:  switch to the *local* master branch
   * `git pull origin master`: pull down the latest changes from the server
   * `git checkout featureX`: switch (back) to your featureX branch
