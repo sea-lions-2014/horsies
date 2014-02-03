@@ -5,7 +5,8 @@ FactoryGirl.define do
   end
 
   factory :deck do
-    sequence(:name)  { |n| "deck #{n}" }
+    sequence(:name)  { |n| "deck#{n}" }
+    user
   end
 
   factory :user do

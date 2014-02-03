@@ -9,3 +9,8 @@ Dir[File.dirname(__FILE__)+"/factories/*.rb"].each {|file| require file }
 ENV['RACK_ENV'] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
+
+# before test delete all existing models and db rows
+User.delete_all
+Deck.delete_all
+Card.delete_all
