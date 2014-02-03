@@ -5,6 +5,12 @@ FactoryGirl.define do
   end
 
   factory :deck do
-    sequence(:name)  { |n| "deck #{n}" }
+    sequence(:name)  { |n| "deck#{n}" }
+    user
+  end
+
+  factory :user do
+  	sequence(:name) { |n| "user#{n}" }
+  	password "foobar"
   end
 end
