@@ -31,7 +31,7 @@ describe 'Deck management' do
 			end
 
 			it 'should show success message' do
-				expect(page).to have_content("You have made a deck!")
+				expect(page).to have_content("congratulations, you have made a new deck!")
 			end
 
 			it 'should have a link back to the deck list' do

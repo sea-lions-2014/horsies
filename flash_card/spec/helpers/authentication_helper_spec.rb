@@ -10,7 +10,7 @@ describe AuthenticationHelper do
 		end
 
 		it 'should sucessfully login the user' do
-			expect(page).to have_content("Welcome ".concat(user.name))
+			expect(page).to have_content("welcome, ".concat(user.name))
 		end
 	end
 end

@@ -4,7 +4,7 @@ describe 'Home Page' do
   context 'checking for login' do
     it "lets you in if you're logged in" do
       visit '/'
-      expect(page).to have_content "Login"
+      expect(page).to have_button('Login')
     end
   end
 end
@@ -35,7 +35,7 @@ describe 'User Authorization' do
 		end
 
 		it 'should allow me to see my user page' do
-			expect(page).to have_content("Welcome ".concat(user.name))
+			expect(page).to have_content("welcome, ".concat(user.name))
 		end
 	end
 

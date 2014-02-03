@@ -9,6 +9,12 @@ before '/*' do
 end
 
 get '/' do
+
+  erb:index
+end
+
+get '/decks' do
+  @decks = Deck.all
   erb :index
 end
 

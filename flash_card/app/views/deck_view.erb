@@ -1,12 +1,14 @@
 <a href="/deck">Back</a>
-<div class="continer">
+<div class="quistions-continer">
 <% @cards.each do |card| %>
 <%= card.question %><br>
 <a href="/deck/<%= @deck.id %>/card/<%= card.id %>/delete">Delete</a><br>
 <% end %>
-<a href="/deck/<%= @deck.id %>/scores">View the leaderboard for this deck</a>
-<a href="/deck/<%= @deck.id %>/card/new">Add a new card to this deck</a>
-<a href="/deck/<%= @deck.id %>/delete">Delete this deck</a><br>
-<a href="/deck/<%= @deck.id %>/quiz">Quiz yourself on this deck</a>
+	<div id="list-items">
+		<a href="/deck/<%= @deck.id %>/scores">View the leaderboard for this deck</a><br>
+		<a href="/deck/<%= @deck.id %>/card/new">Add a new card to this deck</a><br>
+		<a href="/deck/<%= @deck.id %>/delete">Delete this deck</a><br>
+		<a href="/deck/<%= @deck.id %>/quiz">Quiz yourself on this deck</a><br>
+	</div>
 </div>
 
