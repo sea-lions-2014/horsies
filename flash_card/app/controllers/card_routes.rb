@@ -9,6 +9,11 @@ get "/deck/:deck_id/card/:card_id/delete" do
 end
 
 post '/deck/:deck_id/card' do
+  # I think this would be so much sweeter if you were to remove all these
+  # instance variables and INSTEAD created a Card (which should also handle
+  # adding itself to a deck) and then you return the @new_card variable to the
+  # views.  THAT should have all the knowledge for displaying.
+
   @question = params[:question]
   @answer = params[:answer]
   @deck_id = params[:deck_id]

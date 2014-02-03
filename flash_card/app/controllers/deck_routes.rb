@@ -4,6 +4,13 @@ get '/deck' do
   erb :deck
 end
 
+get '/deckscores' do
+  @user = User.find(session[:user_id])
+  @decks = @user.decks.all # Potential for N+1 query bug.  See NOTES.md
+  #@decks = @user.decks.includes(:scores).all # N+1 safe
+  erb :deckscores
+end
+
 get "/deck/:deck_id/delete" do
   Deck.find(params[:deck_id]).destroy
   redirect "/deck"
@@ -22,6 +29,7 @@ end
 
 post '/deck' do
   @name = params[:deck_name]
+  # Unused?  Don't leave things in you don't use
   @type = "deck"
   @new_deck = Deck.create(name: @name)
   @user.decks << @new_deck

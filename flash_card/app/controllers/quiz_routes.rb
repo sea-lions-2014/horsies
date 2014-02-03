@@ -1,4 +1,5 @@
 get '/deck/:id/quiz/score' do
+  # Can we use Score.find instead?
   @score = Score.where(user_id: @user.id, deck_id: params[:id].to_i).first
   @id = params[:id]
   erb :user_score
@@ -15,7 +16,9 @@ get '/deck/:id/quiz/:num' do
   erb :quiz
 end
 
+# I don't like this method for a variety of reasons.
 post '/deck/:id/quiz/:num' do
+  # this feels really heavy-handed!
   @num += 1
   @score = Score.create(user_id: @user.id, deck_id: params[:id].to_i, value: 0) if @num == 1 # create a new score on the first question
   session[:score] = 0 if params[:num].to_i == 0 #set session score value to zero if on the first question

@@ -1,0 +1,7 @@
+<% @decks.each do |d| %>
+  <% if d.scores.empty? %>
+    <p>empty</p>
+  <% else %>
+    <p><%= d.scores.map(&:value).join('*') %></p>
+  <% end %>
+<% end %>
