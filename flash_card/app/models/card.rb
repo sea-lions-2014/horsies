@@ -5,4 +5,8 @@ class Card < ActiveRecord::Base
   def add_to_deck!(deck)
     decks << deck
   end
+
+  def correct_guess?(guess)
+     guess.downcase == self.answer.downcase
+  end
 end

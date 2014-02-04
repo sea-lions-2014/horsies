@@ -25,8 +25,9 @@ class Deck < ActiveRecord::Base
     @score = get_score_for_user(user)
     initalize_session_score!(params, session)
     @top_card = Card.find(session[:card_id])
-    @correct = params[:guess].downcase == @top_card.answer.downcase ? true : false
-    session[:score] += 1 if @correct # add one to score if correct
+    if (@correct = @top_card.correct_guess?(params[:guess]))
+      session[:score] += 1
+    end
     @score.update_attributes(value: session[:score])
   end
 
