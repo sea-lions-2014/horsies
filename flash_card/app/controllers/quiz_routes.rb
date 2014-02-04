@@ -16,11 +16,11 @@ get '/deck/:id/quiz/:num' do
 end
 
 post '/deck/:id/quiz/:num' do
-  @deck.track_guess(params, @user, session)
+  @correct = @deck.track_guess(params[:guess], @user, session[:card_id])
 
   if @deck.last_question?(params[:num].to_i )
-    erb :user_score # show score
+    erb :user_score
   else
-    erb :quiz_feedback # or show feedback
+    erb :quiz_feedback
   end
 end
