@@ -7,9 +7,11 @@ describe Card do
 
   subject { @card } 
 
+
   it { should respond_to(:question) }
   it { should respond_to(:answer) }
   it { should respond_to(:decks) }
+  it { should respond_to(:add_to_deck!) }
 
   describe "card deck association" do
     let(:deck) { FactoryGirl.create(:deck) }
@@ -21,6 +23,15 @@ describe Card do
     its(:card) { should eq @card }
     its(:deck) { should eq deck }
   end
+
+  it "should accumulate a deck" do
+    deck = FactoryGirl.create(:deck)
+
+    @card.add_to_deck!(deck)
+    @card.decks.should_not be_empty
+    @card.decks.should include(deck)
+  end
+
 end
 
 describe Deck do
