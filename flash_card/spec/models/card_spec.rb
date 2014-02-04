@@ -33,13 +33,3 @@ describe Card do
   end
 
 end
-
-describe Deck do
-  before do
-    @deck = Deck.new(name: 'Kevin')
-  end
-
-  subject { @deck }
-
-  it { should respond_to(:name) }
-end
