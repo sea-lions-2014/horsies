@@ -17,6 +17,7 @@ end
 
 post '/deck/:id/quiz/:num' do
   @correct = @deck.track_guess(params[:guess], @user, session[:card_id])
+  (@next_card_id = params[:num].to_i + 1) if @correct
 
   if @deck.last_question?(params[:num].to_i )
     erb :user_score
