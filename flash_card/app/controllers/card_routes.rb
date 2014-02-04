@@ -9,10 +9,8 @@ get "/deck/:deck_id/card/:card_id/delete" do
 end
 
 post '/deck/:deck_id/card' do
-  @question = params[:question]
-  @answer = params[:answer]
-  @deck_id = params[:deck_id]
-  @new_card = Card.create(question: @question, answer: @answer)
-  @new_card.decks << Deck.find(params[:deck_id])
+  deck = Deck.find(@deck_id = params[:deck_id])
+  @card = Card.create(question: params[:question], answer: params[:answer])
+  @card.decks << deck
   erb :created_card
 end
