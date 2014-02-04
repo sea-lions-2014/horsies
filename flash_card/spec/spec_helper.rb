@@ -10,6 +10,10 @@ ENV['RACK_ENV'] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
+
 # before test delete all existing models and db rows
 User.delete_all
 Deck.delete_all
