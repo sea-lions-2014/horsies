@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'rspec'
+require 'rack/test'
 require 'factory_girl'
 Dir[File.dirname(__FILE__)+"/factories/*.rb"].each {|file| require file }
 # All our specs should require 'spec_helper' (this file)
@@ -9,6 +11,9 @@ Dir[File.dirname(__FILE__)+"/factories/*.rb"].each {|file| require file }
 ENV['RACK_ENV'] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
+
+# Add root project path for easy require
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
